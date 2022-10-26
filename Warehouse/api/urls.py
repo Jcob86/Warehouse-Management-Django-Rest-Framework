@@ -1,6 +1,11 @@
 from django.urls import path
+from rest_framework.routers import SimpleRouter
 from . import views
 
-urlpatterns = [
-    path('', views.example),
-]
+router = SimpleRouter()
+router.register('employees', views.EmployeeViewSet)
+router.register('invoices', views.InvoiceViewSet)
+router.register('products', views.ProductViewSet)
+router.register('callendar', views.CallendarViewSet)
+
+urlpatterns = router.urls
