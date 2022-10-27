@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'address',
     'phone_field',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -140,5 +141,9 @@ INTERNAL_IPS = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'COERCE_DECIMAL_TO_STRING': False
+}
 
 GOOGLE_API_KEY = env("GOOGLE_API_KEY")

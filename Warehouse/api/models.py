@@ -37,7 +37,6 @@ class Invoice(models.Model):
 
 class Collection(models.Model):
     title = models.CharField(max_length=255)
-    featured_product = models.ForeignKey('Product', on_delete=models.SET_NULL, null=True, related_name='+', blank=True)
 
     def __str__(self) -> str:
         return self.title
